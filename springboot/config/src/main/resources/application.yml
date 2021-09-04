@@ -1,0 +1,14 @@
+person:
+  name: zhouyingchuan
+  age: 21
+  happy: false
+  birth: 1999/11/15
+  map: {k1: v1,k2: v2}
+  list:
+    - code
+    - girl
+    - music
+    - games
+  dog:
+    name: xiaohei
+    age: 2

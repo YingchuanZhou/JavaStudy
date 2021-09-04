@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <script>
+<!--        编写一个JS对象-->
+        var user = {
+            name:"周迎川",
+            age:21,
+            sex:"男"
+        };
+        console.log(user);
+    //    将JS对象转化为JSON对象
+        var str = JSON.stringify(user);
+        console.log(str);
+    //    {"name":"周迎川","age":21,"sex":"男"}
+    //    将JSON转化为JS对象
+        var obj = JSON.parse(str);
+        console.log(obj);
+    //    {name: "周迎川", age: 21, sex: "男"}
+    </script>
+</body>
+</html>

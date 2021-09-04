@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace 绑定对应Dao层的Mapper接口-->
+<mapper namespace="dao.UserDao">
+    <!--    select查询语句，这里的id就是Dao层中的接口，相当于实现接口-->
+    <select id="getUserList" resultType="pojo.User">
+        select * from commodity.user ;
+    </select>
+
+    <select id="getUserById" parameterType="String" resultType="pojo.User">
+        select * from commodity.user where username = #{username}
+    </select>
+
+    <!--    模糊查询-->
+    <select id="getUserByLike" parameterType="String" resultType="pojo.User">
+        select * from commodity.user where username like #{value}
+    </select>
+    <insert id="addUser" parameterType="pojo.User">
+        insert into commodity.user (username , password, customer_no) values (#{username},#{password},#{customer_no})
+    </insert>
+
+    <!--    这种方式后面取的值只需要与map中的键对应，不需要与数据库和实例中的属性对应
+            传递map的key
+    -->
+    <insert id="addUser2" parameterType="map">
+        insert into commodity.user (username,password,customer_no) values (#{userName},#{PassWord},#{customerNo})
+    </insert>
+
+    <update id="updateUser" parameterType="pojo.User">
+        update commodity.user set username=#{username},password = #{password},customer_no=#{customer_no} where username = #{username}
+    </update>
+
+    <delete id="deleteUser" parameterType="String">
+        delete from commodity.user where username = #{username}
+    </delete>
+</mapper>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.CommoditySupplierMapper">
+    <insert id="addSupplier" parameterType="CommoditySupplier">
+        insert into commodity_supplier
+        values(#{supplierNo},#{supplierName},#{linkman},#{telNumber},#{supplierIntroduce})
+    </insert>
+
+
+<!--&lt;!&ndash;    SQL片段&ndash;&gt;-->
+<!--    <sql id="if-no-name">-->
+<!--        <if test="supplierNo != null">-->
+<!--            and supplier_no = #{supplierNo}-->
+<!--        </if>-->
+<!--        <if test="supplierName != null">-->
+<!--            and supplier_name = #{supplierName}-->
+<!--        </if>-->
+<!--    </sql>-->
+
+<!--&lt;!&ndash;    使用if查询&ndash;&gt;-->
+<!--    <select id="querySupplierByIf" parameterType="map" resultType="CommoditySupplier">-->
+<!--        select * from commodity_supplier where 1=1-->
+<!--&#45;&#45;         引入SQL片段-->
+<!--        <include refid="if-no-name"></include>-->
+<!--    </select>-->
+
+    <!--    使用if查询-->
+    <select id="querySupplierByIf" parameterType="map" resultType="CommoditySupplier">
+        select * from commodity_supplier where 1=1
+        <if test="supplierNo != null">
+            and supplier_no = #{supplierNo}
+        </if>
+        <if test="supplierName != null">
+            and supplier_name = #{supplierName}
+        </if>
+    </select>
+
+
+<!--   使用choose -->
+    <select id="querySupplierByChoose" parameterType="map" resultType="CommoditySupplier">
+        select * from commodity_supplier
+        <where>
+--         where语句会自动去掉多余的and和自己本身
+            <choose>
+                <when test="supplierNo != null">
+                    supplier_no = #{supplierNo}
+                </when>
+                <when test="supplierName != null">
+                    and supplier_name = #{supplierName}
+                </when>
+                <otherwise>
+                    and linkman = #{linkman}
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+
+<!--    使用set-->
+    <update id="updateSupplier" parameterType="map">
+        update commodity_supplier
+        <set>
+            <if test="supplierName != null">
+                supplier_name = #{supplierName},
+            </if>
+            <if test="linkman != null">
+                linkman = #{linkman}
+            </if>
+        </set>
+        where supplier_no =#{supplierNo}
+    </update>
+
+
+<!--
+        使用foreach
+        select * from commodity_supplier where id = '1111' or id ='2222'
+-->
+    <select id="querySupplierByForEach" parameterType="map" resultType="CommoditySupplier">
+        select * from commodity_supplier
+        <where>
+            <foreach collection="ids" open="(" separator="or"  close=")" item="id">
+                supplier_no = #{id}
+            </foreach>
+        </where>
+    </select>
+</mapper>

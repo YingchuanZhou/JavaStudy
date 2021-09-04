@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.zhou.pojo.Address">
+        <property name="address" value="重庆"/>
+    </bean>
+
+    <bean id="student" class="com.zhou.pojo.Student">
+<!--        1.使用普通值注入-->
+        <property name="name" value="周迎川"/>
+<!--        第二种，Bean注入，ref-->
+        <property name="address" ref="address"/>
+<!--        第三种，数组注入-->
+        <property name="books">
+            <array>
+                <value>Java</value>
+                <value>Python</value>
+                <value>C++</value>
+                <value>Spring</value>
+            </array>
+        </property>
+<!--        List注入-->
+        <property name="hobbies">
+            <list>
+                <value>写代码</value>
+                <value>看电影</value>
+                <value>听歌</value>
+                <value>学习</value>
+            </list>
+        </property>
+<!--        Map注入-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="500235199911152222"/>
+                <entry key="银行卡" value="6215281055252724"/>
+            </map>
+        </property>
+<!--        Set注入-->
+        <property name="games">
+            <set>
+                <value>LOL</value>
+                <value>CF</value>
+                <value>QQ飞车</value>
+            </set>
+        </property>
+<!--        null注入-->
+        <property name="wife">
+            <null/>
+        </property>
+<!--        Properties注入
+            key=value
+            key=value
+            key=value
+-->
+        <property name="info">
+            <props>
+                <prop key="学号">631907060434</prop>
+                <prop key="性别">男</prop>
+                <prop key="姓名">周迎川</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    使用无参构造-->
+    <bean id="user" class="pojo.User">
+<!--        这里调用的是set方法-->
+        <property name="name" value="周迎川"/>
+    </bean>
+
+<!--    如果添加了别名，我们也可以使用别名获取到这个对象-->
+    <alias name="user" alias="userNew"/>
+
+
+
+<!--    使用下标赋值-->
+<!--    <bean id="user" class="pojo.User">-->
+<!--        <constructor-arg index="0" value="周迎川"/>-->
+<!--    </bean>-->
+
+
+<!--    通过类型赋值，不建议使用-->
+<!--    <bean id="user" class="pojo.User">-->
+<!--        <constructor-arg type="java.lang.String" value="周迎川"/>-->
+<!--    </bean>-->
+
+
+<!--    直接通过参数名赋值-->
+<!--    <bean id="user" class="pojo.User">-->
+<!--        <constructor-arg name="name" value="周迎川"/>-->
+<!--    </bean>-->
+
+
+<!--
+        id：bean的唯一标识符，也相当于对象的名称
+        class：bean对象所对应的全限定名：包名+类名
+        name：也是别名，而且name更加高级，可以同时取多个别名，分隔符也可以是空格、逗号、分号
+-->
+    <bean id="user2" class="pojo.User" name="userT,u2;us2 use4">
+        <!--        这里调用的是set方法-->
+        <property name="name" value="周迎川"/>
+    </bean>
+</beans>

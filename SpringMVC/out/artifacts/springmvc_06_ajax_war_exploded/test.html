@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iframe体验页面无刷新</title>
+    <script>
+        function go() {
+            var url = document.getElementById("url").valueOf();
+            document.getElementById("iframe").src=url;
+
+        }
+    </script>
+</head>
+<body>
+
+    <div>
+        <p>输入地址：</p>
+        <p>
+        <input type="text" id="url" value="">
+        <input type="button" value="提交" onclick="go()">
+        </p>
+    </div>
+    <div>
+        <iframe id="iframe" src="" frameborder="0" style="width: 100%;height: 500px"></iframe>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.UserMapper">
+<!--    你是傻逼
+-->
+    <select id="getUserList" resultType="User">
+        select * from commodity.user ;
+    </select>
+
+<!--&lt;!&ndash;    取别名方式&ndash;&gt;-->
+<!--    <select id="getUserById" parameterType="int">-->
+<!--        select id, name,pwd as password from commodity.user where id = #{id}-->
+<!--    </select>-->
+
+
+    <!--    结果集映射方式-->
+
+<!--    <resultMap id="UserMap" type="User">-->
+<!--        &lt;!&ndash;    column 是数据库中的字段，property是实体类中的属性&ndash;&gt;-->
+<!--        <result column="id" property="id"></result>-->
+<!--        <result column="name" property="name"></result>-->
+<!--        <result column="pwd" property="password"></result>-->
+<!--    </resultMap>-->
+
+<!--    <select id="getUserById" resultMap="UserMap">-->
+<!--        select * from commodity.user where id = #{id}-->
+<!--    </select>-->
+
+
+    <select id="getUserById" parameterType="String" resultType="pojo.User">
+        select * from commodity.user where username = #{username}
+    </select>
+
+    <insert id="addUser" parameterType="pojo.User">
+        insert into commodity.user (username , password, customer_no) values (#{username},#{password},#{customer_no})
+    </insert>
+
+    <update id="updateUser" parameterType="pojo.User">
+        update commodity.user set username=#{username},password = #{password},customer_no=#{customer_no} where username = #{username}
+    </update>
+
+    <delete id="deleteUser" parameterType="String">
+        delete from commodity.user where username = #{username}
+    </delete>
+
+
+    <select id="getUserByLimit" parameterType="map" resultType="User">
+        select * from  commodity.user limit #{startIndex},#{pageSize}
+    </select>
+
+    <select id="getUserByRowBounds" resultType="User">
+        select * from  commodity.user
+    </select>
+</mapper>

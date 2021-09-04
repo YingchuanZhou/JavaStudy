@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    使用Spring来创建对象，在Spring种这些都被成为Bean
+
+        类型名 变量名 = new 类型（）
+        Hello hello = new Hello（）;
+
+        id 相当于变量名
+        class相当于new的对象
+        property相当于给对象的属性赋值
+-->
+    <bean id="hello" class="com.zhou.pojo.Hello">
+        <!-- collaborators and configuration for this bean go here -->
+<!--
+        ref：引用Spring容器中创建好的对象
+        value：具体的值，基本数据类型
+-->
+        <property name="string" value="Spring"/>
+    </bean>
+    <!-- more bean definitions go here -->
+
+</beans>

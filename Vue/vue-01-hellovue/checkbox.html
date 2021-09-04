@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    多复选框：
+    <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+    &nbsp;&nbsp;
+    <label for="jack">Jack</label>
+    <input type="checkbox" id="join" value="Join" v-model="checkedNames">
+    &nbsp;&nbsp;
+    <label for="join">Jack</label>
+    <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+    &nbsp;&nbsp;
+    <label for="mike">Mike</label>
+    <span>选中的值：{{checkedNames}}</span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.min.js"></script>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            checkedNames:[]
+        }
+    });
+</script>
+</body>
+</html>

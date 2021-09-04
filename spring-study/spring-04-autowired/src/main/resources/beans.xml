@@ -1,0 +1,44 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+<!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+<!--        https://www.springframework.org/schema/beans/spring-beans.xsd">-->
+
+<!--&lt;!&ndash;    xml显示配置&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="cat" class="com.zhou.pojo.Cat"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="dog" class="com.zhou.pojo.Dog"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="people" class="com.zhou.pojo.People">&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="name" value="周迎川"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="cat" ref="cat"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="dog" ref="dog"/>&ndash;&gt;-->
+<!--&lt;!&ndash;    </bean>&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;    利用Spring自动装配 autowired&ndash;&gt;-->
+<!--    <bean id="cat" class="com.zhou.pojo.Cat"/>-->
+<!--    <bean id="dog" class="com.zhou.pojo.Dog"/>-->
+<!--&lt;!&ndash;-->
+<!--        byName:会自动在容器上下文寻找,和自己对象set方法后面的值对应的bean id,但是id必须唯一-->
+<!--        byName:会自动在容器上下文寻找,和自己对象属性类型相同的bean,但是这种方式每个类型的对象只能有一个-->
+<!--&ndash;&gt;-->
+<!--&lt;!&ndash;    <bean id="people" class="com.zhou.pojo.People" autowire="byName">&ndash;&gt;-->
+<!--    <bean id="people" class="com.zhou.pojo.People" autowire="byType">-->
+<!--        <property name="name" value="周迎川"/>-->
+<!--    </bean>-->
+<!--</beans> -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+<!--开启注解支持-->
+    <context:annotation-config/>
+
+    <bean id="cat" class="com.zhou.pojo.Cat"/>
+    <bean id="people" class="com.zhou.pojo.People"/>
+    <bean id="dog" class="com.zhou.pojo.Dog"/>
+</beans>

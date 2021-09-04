@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>测试页面</title>
+</head>
+<body>
+
+<!--th:text就是将div中的内容设置为它指定的值，和之前学习的Vue一样-->
+<!--所有的html元素都可以被thymeleaf替换接管，th:元素名-->
+<div th:text="${msg}"></div>
+<div th:utext="${msg}"></div>
+
+<hr>
+
+<h4 th:each="user:${users}" th:text="${user}"></h4>
+
+<hr>
+
+<h4 th:each="user:${users}">[[${user}]]</h4>
+</body>
+</html>
