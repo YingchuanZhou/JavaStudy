@@ -1,0 +1,31 @@
+server:
+  port: 9527
+spring:
+  application:
+    name: springcloud-zuul
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/,http://localhost:7002/eureka/,http://localhost:7003/eureka/
+  instance:
+      instance-id: localhost
+      prefer-ip-address: true
+
+
+info:
+  app.name: zhou-springcloud
+  company.name: cqjtu
+
+
+# Zuul配置
+zuul:
+  routes:
+    mydept.serviceId: springcloud-provider-dept
+    mydept.path: /mydept/**
+
+# 通常情况下是隐藏全部的
+  # ignored-services: “*”
+  ignored-services: springcloud-provider-dept # 不能再使用springcloud-provider-dept这个访问
+#  设置公共前缀
+  prefix: /zhou
