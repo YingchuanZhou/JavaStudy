@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            overflow: hidden;
+        }
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 100px;
+            margin-left: 0;
+        }
+        .box2{
+            background-color: #bfa;
+        /*
+          设置动画
+              animation-name  对当前元素生效的关键帧的名字
+              animation-duration  动画持续时间
+              animation-timing-function  动画执行的时间函数
+              animation-delay  动画延时
+              animation-iteration-count   动画执行次数
+                   可选值：
+                     次数   infinite （无限循环）
+              animation-direction  动画运行的方向
+                 可选值：
+                    normal  默认值，从from到to 每次运行都一样
+                    reverse    从to到from每次运行都一样
+                    alternate   从from 向to运行， 重复执行动画时反向执行
+                    alternate-reverse  从to 向from 重复执行动画时反向执行
+              animation-play-state  设置动画的执行状态
+                  可选值：
+                     running  默认值，动画执行
+                     paused  动画暂停
+              animation-fill-mode  动画填充模式
+                  可选值：
+                     none  默认值，动画执行时回到原来状态
+                     forwards  动画执行时停在结束状态
+                     backwards  动画延时等待时袁术处于开始状态（from）
+                     both   具有forwards和backwards的特性
+             animation  简写属性和transition一样，注意：延时和持续时间书写时，持续时间在前
+        */
+            animation-name: text;
+            animation-duration: 2s;
+            animation-iteration-count: 4;
+            animation-direction: alternate-reverse;
+
+        }
+        .box1:hover div{
+            animation-play-state: paused;
+        }
+    /*
+       动画：
+         动画和过渡类似，都可以实现动态效果，动画动态效果自动触发
+         设置动画必须先设置关键帧，关键帧设置了动画执行的每一个步骤
+    */
+        /*设置关键帧*/
+        @keyframes text {
+            /*from 表示动画开始位置   也可以用0%*/
+            from{
+                margin-left: 0;
+            }
+            /*to  表示动画的结束位置，   也可以用100%表示*/
+            to{
+                margin-left: 700px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+    <div class="box2"></div>
+    </div>
+</body>
+</html>

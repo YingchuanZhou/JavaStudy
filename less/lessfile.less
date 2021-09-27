@@ -1,0 +1,45 @@
+//单行注释
+/* 多行注释
+注释内容会编译到css文件
+ */
+ .box1{
+  background-color: #bfa;
+  .box2{
+    background-color: #ff0;
+    .box4{
+      background-color: red;
+    }
+    .box3{
+      background-color: orange;
+    }
+  }
+}
+//变量，在变量中可以存任何值
+//需要的时候可以任意改变变量的值
+//变量语法  @变量名
+@a:200px;
+@b:#bfa;
+@c:box5;
+.box5{
+  //使用变量时如果直接使用  @变量名
+  width:@a;
+  color:@b;
+}
+//作为类名或者部分值使用时，必须以@{变量名}的·形式
+@{c}{
+  width: @a;
+  background-image: url("@{c}/1.png");
+}
+@d:200px;
+@d:300px;
+div{
+  //变量发生重名时，以最下面的为准
+  @d:400px;
+  width: @d;
+  height: @e;
+}
+@e:200px;
+div{
+  width:300px;
+  height: $width;
+}

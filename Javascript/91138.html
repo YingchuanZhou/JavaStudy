@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时与延时调用</title>
+    <script>
+        window.onload = function () {
+            var count = document.getElementById("count");
+            /*
+            如果希望程序间隔一段时间调用一次，可以用定时调用
+            setInterval（）方法，定时调用，，可以将会一个函数每隔一段时间调用一次，
+            参数：
+                1.回调函数
+                2.每次调用间隔时间ms
+             会有一个返回值，类型为Number
+             clearInterval（）方法，关闭定时器，，参数需要一个识别定时器的参数，将对应的定时器关闭
+             setInterval返回值就是定时器的唯一标识
+             setTimeout（）延时调用
+             定时调用会执行多次，延时调用只执行一次
+             clearTimeout（）关闭延时调用，用法和定时调用一样
+             */
+            var num=1;
+            var timer=setInterval(function () {
+                count.innerHTML=num++;
+                if(num===11)
+                    clearInterval(timer)
+            },1000);
+        }
+    </script>
+</head>
+<body>
+    <h1 id="count"></h1>
+
+</body>
+</html>

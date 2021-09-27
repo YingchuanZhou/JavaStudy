@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+    <style>
+        /*选择含有属性的元素   【属性名】
+           选择特定属性  【属性名=属性值】
+           选择以什么开头的元素 【属性名^=属性值】
+            选择以什么结束的元素 【属性名$=属性值】
+            属性值含有什么的元素   【属性名*=属性值】
+         */
+        p[title]{
+            color: green;
+        }
+        [title=d2]{
+            font-size: 30px;
+        }
+        [title^=数字]{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <p title="数字1">111111</p>
+    <P title="d2">222222222</P>
+    <P title="数字3">33333333</P>
+    <P title="数字4">44444444</P>
+    <p>555555555555</p>
+</body>
+</html>

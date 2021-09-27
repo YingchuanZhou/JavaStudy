@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类</title>
+    <style>
+        /*ul>li{
+            color: red;
+        }*/
+        /*用伪类来描述元素特殊状态，比如第一个元素，鼠标移动
+         伪类用：开头
+         :first-child 第一个子元素
+         :last-child  最后一个子元素
+         : nth-child（int) 第n个子元素
+             特殊  n表示 0-n全选
+                   2n/even表示 选择偶数
+                    2n+1/odd 表示奇数
+          这些元素是所有元素的中的第几个
+          :first-of-type
+          :last-of-type
+          nth-of-type
+          这两个用法类似
+          区别：第一个是全部元素排序的第几个（如果第几个不是指定类型不会改变元素属性），第二个是同类型排序中的第几个
+          :not 否定伪类 去除某个元素*/
+        /*ul>li:first-child{
+            color: red;
+        }
+        ul>li:nth-child(3){
+            color: green;
+        }
+        ul>li:nth-of-type(5){
+            color: aquamarine;
+        }
+        */
+        ul>li:not(:nth-child(3)){
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1 </li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <ul>
+        <span>00000</span>
+        <li>1 </li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Z平移</title>
+    <style>
+        html{
+        /*    设置网页的视距，人眼与网页的距离*/
+            perspective: 800px;
+        }
+        body{
+            border: 1px solid red;
+            background-color: silver;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+            margin: 200px auto;
+        /*
+           Z轴平移，调整元素在z轴的位置，正常情况是调整元素和人眼之间的距离
+             距离越大，元素离人月近
+           z轴平移属于立体效果，默认情况下，网页不支持透视，如果需要看键效果，必须设置网页距离
+
+        */
+            transition: 2s;
+        }
+        body:hover .box1{
+            transform: translateZ(300px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

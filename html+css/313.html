@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文档流</title>
+    <style>
+        .box1{
+            width: 100px;
+            background-color: green;
+        }
+        .box2{
+            width: 100px;
+            background-color: red;
+        }
+        span{
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+<body>
+<!--    网页都是一层一层的
+         css可以为每一层设置样式
+         最下面一层就是文档流 创建的元素默认都在文档流中   元素状态分为：在文档流   脱离文档流
+         元素在文档流·里面特点：
+            块  块元素在页面中独占一行  默认宽度是父类元素 默认高度由子元素决定
+            行  行元素在页面中和人的书写习惯一样   宽度和高度和内容一样-->
+    <div class="box1"> div1</div>
+    <div class="box2"> div2</div>
+    <span>span1</span>
+    <span>sapn2</span>
+</body>
+</html>

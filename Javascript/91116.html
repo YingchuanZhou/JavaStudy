@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串和正则表达式</title>
+    <script>
+        /*
+            split（）将字符串分割成数组
+                将参数写成正则表达式，这样可以根据正则表达式拆分字符串
+                默认删除正则表达式的匹配默认是全局的
+            search() 搜索字符串中含有指定内容
+                如果搜索到内容返回第一次的索引，没有搜索到返回-1
+                将参数携程正则表达式，会根据正则表达式去搜索，不能搜索全局的
+            match（）根据正则表达式将符合要求的字符串提取出来
+                可以根据字符串提取符合要求的字符串，
+                默认情况下提取一个，如果将正则表达式设置为全局的，就可以提取字符串中全部的字母
+                可以直接设置多个匹配模式，顺序无所谓
+                var res5=str.match(/[A-z]/gi);//提取出全部字母不区分大小写
+                将会封装到数组中返回
+            replace（） 将字符串的的指定字符串替换为新的内容
+                参数
+                    第一个被替换的字符串
+                    第二个新的字符串
+                    默认只会替换第一个
+         */
+        var str="1q2w3e4r5t6y7u";
+        var res=str.split(/[a-z]/);//字符串根据字母分开
+        var res2=str.split(/[abc]/);//将字符串以a，b，c分开
+        var res3= str.search(/[abc]/);//在字符串中搜索a或者b或者c返回第一次搜索到的索引
+        var res4=str.match(/[A-z]/);//提取出一个字母
+        var res5=str.match(/[A-z]/g);//提取出全部字母
+        var res6=str.replace(/[a-z]/gi,"@_@");//将所有字符串中的字母不区分大小写替换成@_@
+        document.write(res);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

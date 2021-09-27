@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+    <script type="text/javascript">
+        /*
+        +  任何与字符串相加，转化成字符串
+        - 任何number转化为Number
+        *  /  都转化为number
+        -  ++  --  转化为Number
+
+        用\u****编码使用unicode编码
+           &# 使用编码时要用十进制的编码
+
+         */
+        //创建jd对象
+        var object = new Object();
+        /*
+        在对象中添加属性
+        语法： 对象.属性=属性值//对象["属性名“]=属性值
+        访问
+          语法：对象.属性//对象["属性名“]=属性值
+          修改
+          语法：对象.属性=新的属性值//对象["属性名“]=属性值
+          删除
+          语法：delete  对象.属性//对象["属性名“]=属性值
+
+
+          in 运算符可以检查对象中是否含有某个属性
+            语法：”属性名“ in 对象
+         */
+        object.name="hahhhh";
+        object["sb"]="hahhaaaaaa";
+        console.log("name" in object);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

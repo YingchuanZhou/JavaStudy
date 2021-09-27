@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script type="text/javascript">
+        //函数function（）
+        //函数中高可用封装一些代码和功能
+        //在js里面函数也是对象
+        //使用typeof可以检查函数的类型，会返回function
+        //创建一个函数对象，可以在函数中创建一个函数
+        /*
+          1.可以将代码封装成字符串的形式传递给构造函数
+          封装到函数中的代码不回立即执行，而是在调用函数的时候执行，语法是函数对象（）
+          2.通过函数声明来构建一个函数对象
+           语法：function 函数名（形参1 ...形参n）
+             {
+             函数体
+             }
+            3.还宽裕用匿名函数来创建一个函数对象
+            语法：
+              var 函数名 =function(形参列表）
+              {
+              函数体
+              }
+         */
+        // var fun = new Function ("console.log('hello');") ;
+        // fun();
+        function fun2()
+        {
+            console.log('这个是我的第二个函数');
+        }
+        fun2();
+        var fun3= function () {
+            console.log("这个是匿名函数");
+        }
+        fun3();
+        /*
+          可以在函数的（）中给指定一个参数或者多个参数
+          多个参数之间用,隔开，声明形参就相当于声明了对应的变量，但是并不是赋值
+          如果实参多余形参： 多余的实参不会被复制；
+          如果实参数量少于形参的数量，，没有被赋值的形参将会成为undefined
+         */
+        function sum(a,b,c) {
+                console.log(a+b+c);
+        }
+        sum(1,2,3);
+        sum(123,234,345);
+        /*
+        函数返回可以通过return返回
+        如果return不写返回值，返回undefined
+         */
+        function sum(a,b) {
+            return (a+b);
+
+        }
+        var a=sum(4,5);
+        document.write(a);
+        /*
+        如果参数太多可以封装成对象再传递过去
+        函数本身也是对象，所以传参数的时候也可以传函数，传过去的函数一样可以直接调用
+        通常将一个匿名函数作为一个实参传递给形参
+            函数名（）调用函数
+            函数名   函数对象
+         */
+        function out(os) {
+            console.log("我叫"+os.name+os.age+"岁");
+        }
+        var obj={
+            name:"周迎川",
+            age:21
+        };
+        out(obj);
+        /*
+        立即执行函数
+            见整个函数封装成一个整体，用小括号括起来，然后在后面加一个括号就调用了函数
+         */
+        (function () {
+            alert("这是一个立即执行函数");
+        })();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

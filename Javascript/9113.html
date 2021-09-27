@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>包装类</title>
+    <script>
+        /*
+            基本数据类型
+                String，NUmber，Boolean，Null，Undefined
+            引用数据类型：
+                Object
+             提供了3个包装类
+             这3个包装类能将基本数据类型转换成对象
+             String（）将基本数据类型转换成String对象
+             NUmber（）将基本数据类型转换成NUmber对象
+             Boolean（）将基本数据类型转换成Boolean对象
+
+             如果用基本数据类型去调用属性和方法时，浏览器会自动使用包装类将其转换为对象，然后调用方法和属性
+             注意：只是临时的，改语句执行完毕自动变回原类型，如果连续两次临时定义的，两个对象不是同一个对象
+         */
+        var num = new Number(3);
+        var str = new String("hello");
+        var bool = new Boolean(true);
+        var s = 123;
+        s=s.toString();
+
+        s.hello = "你好";//这里两次临时转换，所以这两个对象不同
+        //是对象了，就可以给他们添加属性
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

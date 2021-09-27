@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css</title>
+    <!--选择器,可同时给多个标签修改 -->
+<!--    内部样式表-->
+    <style>
+        /*css元素选择器*/
+        p {/*声明块*/
+            color: gold;/*声明*/
+            font-size: 30px;
+          }
+    /*id选择器 */
+        #red {
+            color: red;
+        }
+    /*    类选择器*/
+        .blue{
+            color: blue;
+        }
+        .abc{
+            font-size: 30px;
+        }
+    /*    通配选择器*/
+
+        *{
+            color: black;
+        }
+    </style>
+<!--    也可以写一个外部样式表，在html中的样式表编写在外部css文件中
+    想使用这个样式的网页都可以通过link引入-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--维护不方便，开发时一般不用这种-->
+    <p style="color: red;font-size: 60px;">川哥666</p>
+
+    <p>今天也要好好学习哦</p>
+    <p id="red">今天也要好好学习哦</p>
+    <p style="color: green;font-size: 30%">今天也要好好学习哦</p>
+<!--class标签，与id类似，class可以重复,一个元素可以多个class-->
+    <h1 class="blue">hahhahah</h1>
+    <h1 class="blue abc">hahhahah</h1>
+    <h1 class="red">hahhahah</h1>
+
+</body>
+</html>

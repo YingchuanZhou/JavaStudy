@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            /*background-color: red;*/
+        /*
+          可以通过渐变设置一些复杂的背景，可以实现从一个颜色向另一个颜色过度
+          ！！！渐变图片，需要通过background-image来设置
+           线性渐变，颜色沿着一条直线渐变
+            linear-gradient()
+            linear-gradient(red,yellow) 红色在前，黄色在后，中间为渐变
+            线性渐变的前面可以指定渐变方向
+            to  left   to  right  to top left
+            ————deg  表示多少度渐变  45deg
+            ————turn 多少圈渐变  .5turn
+            渐变可以指定多个颜色，默认平均分配 也可以指定渐变情况
+            repeat-linear-gradient()  渐变重复，即平铺渐变
+        */
+           /*background-image: linear-gradient(red,yellow,green);*/
+           /* background-image: linear-gradient(red 50px, yellow 100px,green 130px);*/
+            background-image: repeating-linear-gradient(to right,red 0px, yellow 50px);
+        }
+        .box2{
+            width: 300px;
+            height: 300px;
+        /*
+            radial-gradient(大小（形状） at 位置，颜色 位置，颜色 位置，颜色 位置)放射性渐变
+              默认情况下，渐变形状由元素形状决定
+                长方形--》椭圆  正方形--》圆
+                也可以指定  circle   ellipse  圆  椭圆
+                        closest-side  closest-corner  farthest-side  farthest-corner
+                可以可以指定渐变位置
+                 top  right  center    --px --px
+        */
+            background-image: radial-gradient(circle at 100px 100px,red 50px,yellow 100px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

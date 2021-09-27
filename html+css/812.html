@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>行高</title>
+    <style>
+        div{
+            font-size: 50px;
+            border: red 1px solid;
+            /*
+               可以将行高和高度设置相同的值来时文字居中
+            */
+            height: 200px;
+            /*
+            行高：
+               行高指文字占有的实际高度
+                 可以通过line-height来设置行高
+                   行高单位（px，em）
+                     也可以设置一个数，表示行高是字体的指定倍数
+                 行高经常还用来设置文字的行间距
+                   行间距=行高-字体大小
+                 字体框：
+                    字体框是字体存在的个字，可以通过font-size设置，设置的大小实际就是字体框的高度
+                     行高会在字体框上下平均分配
+            */
+            line-height: 200px;
+            /*line-height: 1.33;*/
+        }
+    </style>
+</head>
+<body>
+    <div>今天天气真不错，哈哈，The weather is very gorgeous today. 今天天气真不错，哈哈，
+        The weather is very gorgeous today.</div>
+</body>
+</html>

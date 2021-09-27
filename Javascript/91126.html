@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作CSS</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            /*
+            点击按钮修改div大小
+             */
+            var box1=document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+            //修改box1样式
+                /*
+                通过JS修改元素样式，改变的是内联样式，有较高的优先级
+                语法：元素.style.样式名=样式值//样式值是一个字符串
+                样式名不能有特殊符号，要将特殊字符去掉，将后面的字母改成大写
+                通过JS设置的是内联样式，读取的也是内联样式
+                 */
+                box1.style.width="300px";
+                box1.style.backgroundColor="yellow";
+            };
+            var btn02=document.getElementById("btn02");
+            btn02.onclick=function () {
+                alert(box1.style.width);
+            };
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">点击1</button>
+    <button id="btn02">点击2</button>
+    <br><br>
+    <div id="box1"></div>
+</body>
+</html>

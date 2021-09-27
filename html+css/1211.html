@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹性盒子简介</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ul{
+            width: 500px;
+            border: 10px red solid;
+        /*    将ul设置成弹性容器*/
+            display: flex;
+        /*
+           flex-direction  指定容器中弹性元素的排列方式
+              可选值：
+                row  默认值，弹性元素在容器中水平排列（左向右）
+                   主轴  自左向右
+                row-reverse  弹性元素在容器中水平排列（右向左）
+                   主轴   自右向左
+                column  弹性元素在容器中竖直排列（自上向下）
+                column-reverse   弹性元素在容器中竖直排列（自下向上）
+                主轴  弹性元素排列的方向
+                侧轴  与弹性元素垂直的方向
+        */
+            flex-direction: row;
+        }
+        li{
+            width: 200px;
+            height: 100px;
+            background-color: #bbffaa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+        /*
+           弹性元素的属性
+             flex-grow  指定弹性元素的伸展系数
+              当父类元素有多余空间的时候，子元素如何伸展
+              父类元素剩余的空间会按照比例分配
+              flex-shrink  指定弹性元素的收缩系数
+                当父类元素不充足的时候，对子类元素按照比例收缩
+
+        */
+            flex-shrink: 0;
+        }
+        li:nth-child(1){
+            flex-grow: 0;
+            flex-shrink: 1;
+        }
+        li:nth-child(2){
+            flex-grow: 2;
+            background-color: orange;
+        }
+        li:nth-child(3){
+            flex-grow: 3;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

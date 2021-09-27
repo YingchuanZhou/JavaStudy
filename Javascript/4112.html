@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+    <script>
+        /*
+        解析器每次都会向函数内部传递一个隐含的参数this、
+            以函数的形式调用时，this就是window
+            以方法的形式调用时，this就是调用方法的对象
+         */
+        function fun() {
+            alert(this.name);
+        }
+        var obj={
+            name:"sun",
+            age: 10,
+            say:fun
+        }
+        var obj2={
+            name:"sddd",
+            age: 10,
+            say:fun
+        }
+        obj2.say();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

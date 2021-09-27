@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关键帧</title>
+    <style>
+        .outer{
+            height: 500px;
+            border-bottom: 10px solid black;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .box1{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: #bbffaa;
+            animation: ball 2s forwards infinite alternate;
+        }
+        @keyframes ball {
+            from{
+                margin-top: 0;
+            }
+            20%,60%,to{
+                margin-top: 400px;
+                animation-timing-function: ease-in;
+            }
+            40%{
+                margin-top: 100px;
+            }
+            80%{
+                margin-top: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box1"></div>
+    </div>
+</body>
+</html>

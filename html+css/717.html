@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字体族</title>
+    <style>
+        /*
+        问题：
+          加载速度  版权   字体格式
+         */
+        @font-face {
+            /*指定字体名字*/
+            font-family: 'myfont';
+            /*指定字体路径和格式*/
+            /*src: url("路径") format("类型");*/
+        }
+        p{
+            /*
+            字体相关的样式：
+              color  用来指定字体颜色
+              font-size  用来指定字体大小  em  当前字体大小 rem相当于根标签字体大小
+               1em=1font-size   1rem=1html
+              font-family  字体族（字体格式样式）
+                可选值：
+                   serif  衬线字体
+                   sans-serif  非衬线字体
+                   monospace  等宽字体
+                      指定字体类别，浏览器会自动使用该类别的字体
+               font-family  可以同时指定多个字体，多个字体间用‘,‘隔开
+                  字体在前面的优先  字体名字间又空格的通常用单引号’‘
+            */
+            color: red;
+            font-size: 40px;
+            font-family: '微软雅黑' monospace;
+            /*font-family: myfont;*/
+        }
+    </style>
+</head>
+<body>
+    <p>今天天气真不错，how are you！</p>
+</body>
+</html>

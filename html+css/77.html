@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复合选择器</title>
+    <style>
+        .red{
+            color: red;
+        }
+        /*交集选择器，元素选择器开头。。。。可以n个*/
+        div.red{
+            font-size: 30px;
+        }
+        .a.b.c{
+            color: blue;
+        }
+        /*并集选择器*/
+        h1,span{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">我是div</div>
+    <p class="red"> 我是p</p>
+   <div class="red2 a b c">我是div2</div>
+    <h1>标题</h1>
+    <span>哈哈</span>
+</body>
+</html>

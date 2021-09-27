@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>键盘事件</title>
+    <script>
+        window.onload = function () {
+            /*
+            键盘事件：
+            onkeydown
+                一直按的话会一直触发事件，但是第一次和第二次触发事件之间时间间隔稍微就一点，防止误操作
+            键盘按下
+            onkeyup
+            键盘弹起
+            键盘事件一般绑定给可以获取焦点的对象或者是document
+             */
+            document.onkeydown = function (event) {
+                //alert("键盘按下");
+                event = event ||window.event;
+                //可以通过keyCode获取按下键盘按键的编码
+                //时间对象中还有其他的key值，如果按下，返回true，入ctr，alt，shift这几个，分别用ctrkey
+                if(event.keyCode===89 && event.ctrlKey===true)
+                    alert("ctr+y");
+            }
+            document.onkeyup = function () {
+                alert("键盘松开");
+            }
+            var input = document.getElementsByTagName("input")[0];
+            input.onkeydown = function () {
+                return false;//取消文本框显示文字的默认行为
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>

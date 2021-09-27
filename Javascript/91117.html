@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式的语法</title>
+    <script>
+        /*
+            正则表达式
+                量词：通过量词可以设置一个内容的出现次数
+                语法：  var res=/a{量词}/;量词是就近原则只会对前边最近的起作用
+                            res=/a{m,n}/;表示出现次数是m-n次
+                            res=/a{m,}/;表示超过m次
+                            a+ 表示至少一个a
+                            a* 表示0个或则多个a
+                            a？表示0个或者1个a
+                            ^a  表示以a开头
+                            a$  表示以a结尾
+                            ^a$  表示只有一个a
+                            ^a|a$ 以a开头或者以a结尾
+                       如果想检查字符串中是否含有.或者\，有特殊意义的符号必须要用转义符号
+                       在构造函数中也是，如果需要使用\必须要用\\代替，以为参数是字符串，必须要用转义符号
+                       res = /\./;res = /\\/;
+                      \w  任意字母和数字下划线[A-z0-9_]
+                      \W  除了字母和数字下划线[^A-z0-9_]
+                      \s  空格[ ]
+                      \S  除了空格
+                      \b  单词边界  res= /child/; res.test("children")返回true
+                      \B  除了单词边界    res=/\bchild\b/; 测试返回false
+                      \d  任意数字[0-9]
+                      \D  除了数字[^0-9]
+         */
+        /*
+        创建一个字符串是不是手机号
+         */
+        var phonenum="17384017268";
+        var phreg=/^1[3-9][0-9]{9}$/;
+        document.write(phreg.test(phonenum));
+        var res=/a{3,3000}/;
+        res =/ab{3000}/;//3000个b
+        res =/(ab){200}/;//200次ab
+        /*
+            接收一个用户输入
+             用户输入可能会产生空格，一个要去除空格，所以就是用空串去替换空格
+             但是一般只去前后的空格，
+             str.replace(/^\s*|\s*$/g,"");//将*换成+也行
+         */
+        var str=prompt("请输入密码：");
+        str = str.replace(/\s/g,"");
+        document.write(str);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

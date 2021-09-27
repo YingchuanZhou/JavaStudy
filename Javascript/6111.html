@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+    <script>
+        //数组 Array
+        /*
+          数组也是对象，
+          用中括号访问数组
+          使用length获取长度
+          修改length的值可以改变数组长度
+         */
+        //使用new可以直接在数组中赋值，但是参数只有一个数的时候，表示创建一个多长的数组
+        var arr = new Array(1,2,3,4,5,5);
+        var arr3 = new Array(10);
+        //使用字面量来创建数组
+        var arr1= [];
+        //使用字面量可以在创建数组的时候指定以元素值
+        var arr2=[1,2,3,4,5];
+        console.log(arr2);
+        //数组元素可以是任意元素，对象也可以，基本变量，也可以是函数对象
+        arr=[{name:"wu"},{name:"wu"}];
+        arr=[function () {
+
+        },function () {
+
+        }];
+        //数组里面放数组就是二维数组
+        arr = [[1,2,3],[2,4,6,7]];
+    </script>
+</head>
+<body>
+
+</body>
+</html>

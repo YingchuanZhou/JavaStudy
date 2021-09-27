@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本框和单选框</title>
+</head>
+<body>
+    <!-- 
+        input 标签：
+            属性：
+                type：指定元素类型，text，文本框
+                                    password，密码框
+                                    radio，单选框，这个时候name相同的就是单选的
+                                    checkbox,多选框，这个时候name相同的就是同一个多选框
+                                    submit,提交按钮
+                                    reset,清空按钮
+                                    file,文件域
+                                    hidden,隐藏域，将输入的东西隐藏
+                                    image, 图像按钮 
+                                    button,按钮标签 也是name表示标签名，value设置显示内容
+                name:指定元素名字
+                vale：指定元素初值
+                maxlength:表示输入的最大长度
+                size：文本框长度
+                cheched：指定元素是否被选中
+                disabled：禁止选用
+                readonly：只能读
+                placeholder:文本框提示内容
+                required:非空提示
+                pattern:正则表达式
+     -->
+     <h1>注册</h1>
+     <form action="1.网页基本信息.html" method="get">
+        <p>名字：<input type="text" name="username" placeholder="用户名" required></p>
+        <p>密码：<input type="password" name="password" pattern=""></p>
+        <br><br>
+        <p>性别：<input type="radio" value="boy" name="sex">男
+            <input type="radio" value="girl" name="sex">女
+        </p>
+        <br><br>
+        <p>
+            爱好：<input type="checkbox" value="sleep" name="hobby">睡觉
+                <input type="checkbox" value="qiao" name="hobby" checked>敲代码
+                <input type="checkbox" value="play" name="hobby">打游戏
+                <input type="checkbox" value="gril" name="hobby">女
+        </p>
+        <br><br>
+        <!-- 
+            select下拉框
+                属性：
+                    name,下拉框名字
+         -->
+         <!-- 
+             option标签，select的子标签
+          -->
+         <p>国家：
+             <select name="list">
+                 <option value="li" selected>中国</option>
+                 <option value="li">美国</option>
+                 <option value="li">英国</option>
+             </select>
+         </p>
+         <br><br>
+         <!-- 
+             文本域
+             name，cols，rows
+          -->
+         <p>反馈：
+            <textarea name="text" cols="50" rows="10">文本内容....</textarea>
+         </p>
+         <br><br>
+         <!-- 文件域 -->
+         <p>
+             选择文件：
+             <input name="files" type="file">
+             <input type="button" value="上传" name="upload">
+         </p>
+         <br><br>
+         <!-- 
+             验证
+             通过type指定验证类型
+             email，url，number
+             可以指定：max，min，step
+          -->
+        <p>
+            邮箱：
+            <input type="email" name="email">
+            <br>
+            数字：<input type="number">
+            <br>
+            滑块：<input type="range">
+        </p>
+        <br><br>
+        <!-- 搜索框 -->
+        搜索：<input type="search">
+        <br><br>
+        <!-- 增强鼠标可用性 -->
+        <label for="mark">点我：</label>
+        <input type="txet" id="mark">
+        <p><input type="submit" name="sub" value="提交"> 
+            <input type="reset" value="清空">
+        </p>
+    </form>
+</body>
+</html>

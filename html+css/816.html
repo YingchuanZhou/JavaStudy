@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>背景</title>
+    <style>
+         .box1{
+            width: 500px;
+            height: 500px;
+        /*
+          background-color  设置背景颜色
+        */
+            background-color: chartreuse;
+        /*
+          background-image  设置背景图片
+             可以同时设置背景颜色和图片 颜色会补充图片空白处
+             如果图片小于元素，会重复，如果大于，图片显示部分
+        */
+            background-image: url("../images/me1.png");
+        /*
+          background-repeat 用来设置背景图片重复方式
+             可选值
+                repeat  默认值  x，y重复
+                repeat-x  x轴重复
+                repeat-y  y轴重复
+                no-repeat  不重复
+        */
+            background-repeat: no-repeat;
+        /*
+          background-position  用来设置图片位置
+             设置方式
+                 通过top  left  right  bottom  center 来表示方位
+                   使用时一般指定两个值，不写默认是center
+                 通过偏移量来设置位置
+                   两个值  第一个x轴偏移量  第二个y周偏移量
+
+        */
+            background-position: top center;
+            /*background-position: 100px 100px;*/
+            /*
+               background-origin 设置偏移量原点
+                   可选值
+                     padding-box  默认值  background-position从内边距开始计算
+                     content-box  背景图片从内容区开始计算
+                     border-box   背景图片从外边框开始计算
+                background-clip  设置背景范围
+                    可选值
+                      border-box  默认值，背景会出现在边框的下边
+                      padding-box  背景只会出现在内容区和内边距
+                      content-box   背景只会出现在内容区
+            */
+            border: red 1px double;
+            background-origin: border-box;
+            background-clip: content-box;
+        /*
+         background-size  设置背景图片的大小
+             第一值表示宽度  第二个值表示高度
+             如果只写一个值，第二个默认为auto
+
+             cover 图片比例不变，将元素铺满
+             contain  图片比例不变，将图片在元素中完整显示
+        */
+            background-size: 200px auto;
+
+        }
+        .box2{
+            width: 300px;
+            height: 1000px;
+            background-image: url("../images/me2.png");
+            background-repeat: no-repeat;
+            background-position: 100px 100px;
+        /*
+          background-attachment  设置背景图片是否跟随元素移动
+              可选值
+                  scroll  默认值 背景图片跟随元素移动
+                  fixed  背景图片不跟随元素移动
+        */
+            background-attachment: fixed;
+        }
+        .box3{
+            /*
+             background   设置背景简写属性
+                顺序没用要求，也没有必须写的属性
+                  注意：
+                     background-size必须在background-position后面，用/隔开
+                       background-position/background-size
+                     background-origin background-clip 两个样式background-origin要在前面
+            */
+            width: 500px;
+            height: 500px;
+            border: red 1px double;
+            padding: 50px;
+            background: red url("../images/pause_nor.png") center center /contain border-box content-box no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">本监测系统的应变监测共10个监测点，每个监测点安装有1个监测传感器，监测数据存放在“应变监测数据.txt”文件中，该文件数据除第一列之外（监测时间），其它每列对应一个传感器的监测数据（波长），假设这10个传感器一次对应10个监测点。数据文件的数据含义如下表：
+            本监测系统的应变监测共10个监测点，每个监测点安装监测数据.txt”文件中，该文件数据除第一列之外（监测时间），其它每列对应一个传感器的监测数据（波长），假设这10个传感器一次对应10个监测点。数据文件的数据含义如下表：本监测系统的应变监测共10个监测点，每个监测点安装有1个监测传感器，监测数据存放在“应变监测数据.txt”文件中，该文件数据除第一列之外（监测时间），其它每列对应一个传感器的监测数据（波长），假设这10个传感器一次对应10个监测点。数据文件的数据含义如下表：
+        </div>
+    </div>
+    <div class="box3"></div>
+</body>
+</html>

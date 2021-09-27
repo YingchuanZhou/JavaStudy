@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>卡片切换</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #outer{
+            width: 300px;
+            margin: 50px auto;
+            padding: 10px;
+            background-color: greenyellow;
+            text-align: center;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            /*
+            点击按钮切换卡片
+             */
+            var over= document.getElementById("over");
+            var begin = document.getElementById("begin");
+            var img = document.getElementsByTagName("img");
+            over.onclick = function () {
+                img[0].src = "../images/gameover.png";
+            };
+            begin.onclick=function () {
+                img[0].src ="../images/pause_nor.png"
+            };
+        }
+    </script>
+</head>
+<body>
+    <div id="outer">
+        <img src="../images/pause_nor.png" alt="游戏结束">
+        <button id="begin">暂停</button>
+        <button id="over">结束</button>
+    </div>
+</body>
+</html>

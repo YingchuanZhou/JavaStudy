@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+    <style>
+        /*
+            定位（position）
+               定位是一种高级的布局手段
+               可以通过定位将元素摆放在页面的任意位置
+               使用position来设置定位
+                   static  默认值，元素静止没有开启定位
+                   relative  开启相对定位
+                   absolute   开启绝对定位
+                   fixed   开启固定定位
+                   sticky   开启粘滞定位
+               绝对定位
+                 position属性值设置为absolute就开启了绝对定位
+                   绝对定位的特点：
+                     开启绝对定位后不设置偏移量，位置不发生改变
+                     开启绝对定位后，元素脱离文档流
+                     开启绝对定位后元素性质改变，行元素变成块元素
+                     绝对定位会提高元素的层级
+                     绝对定位元素是相对于其包含快进行定位
+
+                包含快：
+                 正常情况下  包含快就是最近的祖先块元素
+
+                 绝对定位的包含快   包含快就是离他最近的开启了定位的元素，若所有元素均未开启，则为《HTML》
+                   top bottom left right
+                 注意： 参照物为改元素的包含快
+
+         */
+        body{
+            font-size: 30px;
+        }
+        .box1{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+        }
+        .box2{
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            position: absolute;
+            left: 300px;
+            top: 300px;
+        }
+        .box3{
+            height: 200px;
+            width: 200px;
+            background-color: gold;
+        }
+    </style>
+</head>
+<body>
+<div class="box1">1</div>
+<div class="box2">2</div>
+<div class="box3">3</div>
+</body>
+</html>

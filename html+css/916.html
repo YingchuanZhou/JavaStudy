@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单扩展</title>
+</head>
+<body>
+    <form action="accept.html">
+<!--
+         属性
+           autocomplete 设置为off时记住账号框关闭   on开启
+           readonly 只能读，不能写  数据会提交
+           disabled   禁止使用  数据不会提交
+           autofocus   自动获取焦点  进入网页时，光标默认在哪个位置
+-->
+        <input type="text" name="username" value="hello" autocomplete="off">
+        <br><br>
+        <input type="text" name="a" readonly value="hello">
+        <br><br>
+        <input type="text" name="b" disabled value="hello">
+        <br><br>
+        <input type="text" name="c" autofocus>
+        <br><br>
+        <input type="color">
+        <br><br>
+        <input type="email">
+        <br><br>
+<!--        提交按钮-->
+        <input type="submit">
+<!--        重置按钮-->
+        <input type="reset">
+<!--        普通按钮-->
+        <input type="button" value="按钮">
+        <br><br>
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+        <button type="button">按钮</button>
+    </form>
+</body>
+</html>

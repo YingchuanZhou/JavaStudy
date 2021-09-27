@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域</title>
+    <script>
+        /*
+        在全局创建的任何东西都是window的方法
+        var a；
+        console.log(a)==console.log(window.a)
+        使用var定义的变量会在程序运行之前，但是不能赋值
+        函数声明会在程序执行之前创建，所以可以在函数定义之前调用函数
+          function fun（）{}
+          但是 var fun = function（）{}不会在程序运行前执行
+
+
+          函数作用域
+             每次调用函数都会创建
+         */
+        fun1();
+        fun2();
+        function fun1()
+        {}
+        var fun2=function ()
+        {}
+        fun1();
+        fun2();
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

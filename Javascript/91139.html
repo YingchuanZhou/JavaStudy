@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类的操作</title>
+    <style>
+        .d1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .d2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        .b2{
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById("btn");
+            var box = document.getElementById("box");
+            btn.onclick = function () {
+                /*
+                修改box的css样式，通过修改class属性
+                只需要修改一次，就可以修改很多样式，这种方式将表现和行为分离
+                 */
+            box.className = "d2";
+            //如果需要兼容两个样式，两个样式相互补充的话
+                box.className+=" b2"//其中空格一定不能少，将两个类名分开
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">点击切换样式</button>
+    <br><br>
+    <div id = "box" class="d1"></div>
+
+</body>
+</html>

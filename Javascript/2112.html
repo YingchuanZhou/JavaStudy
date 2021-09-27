@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型</title>
+    <script type="text/javascript">
+        /*
+        基本数据类型：
+          Number  Boolean  String Undefined  Null
+        引用数据类型
+        Object
+          引用对象指向的是同一个内存空间地址
+            对象与对象之间的比较是比较的内存地址是否一样
+            如果不要一样则返回false
+          也可以用对象字面量
+            var a={};
+             字面量里面可以直接指定对像属性
+             语法：{属性名：属性，属性名：属性}；
+             使用特殊属性名的时候必须要加”“引号
+             属性名和属性值是一组一组的
+             对象字面量的嵌套使用时，需要用:冒号语法
+             var a=
+             {
+               name:...
+               age:...
+               test:{属性名：属性值。。。。。}
+             }
+         */
+        var obj1=new Object();//var obj1={};
+        var obj2=new Object();
+        var obj3=new Object();
+        var obj4=new Object();
+        obj1.name="sb";
+        obj2=obj1;
+        obj3.name="sb";
+        obj4.name="sb";
+       alert(obj3===obj4);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

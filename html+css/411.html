@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>布局</title>
+    <style>
+        /*
+        水平布局：
+           子类元素所有值必须与父类值相同，否则会自动补齐，通过margin-right补齐
+           若某个元素设置为auto 变量 则会自动补齐 只能 width margin-left  margin-right 设置为auto
+           如果将宽度和外边距 都设置成auto，则宽度会最大化
+        垂直布局：
+           父类如果不设置，则会被子元素撑开,高度和子元素相同
+           如果子元素高度比父元素高，则子元素溢出
+           overflow  对溢出部分处理   默认值为visible   可以看见  hide  不可见 scroll 生成两个滚动条 水平和垂直滚动
+                                       auto  根据需要自动生成滚动条
+           overflow-x  单独处理水平  overflow-y  单独处理垂直方向
+           */
+        /*.outer{
+            width: 800px;
+            height: 200px;
+            border: 10px red solid;
+        }
+        .inner{
+            width: auto;/*width 默认为auto
+            height: 200px;
+            background-color: blue;
+            margin-right: 100px;
+            margin-left: 100px;
+        }*/
+        .outer{
+            height: 400px;
+            background-color: chartreuse;
+        }
+        .inner{
+            width: 200px;
+            height: 100px;
+            background-color: gold;
+            margin-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

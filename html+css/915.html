@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+</head>
+<body>
+<!--
+    form  表单
+       在现实是用于提交数据
+       在网页中用表单将本地数据提交给服务器
+       属性值
+          action  表单要提交的服务器IP地址
+-->
+    <form action="accept.html">
+<!--            文本框   数据提交给服务器时，type  指定text必须指定name属性-->
+         文本框<input type="text" name="username">
+        <br><br>
+<!--        密码框   type 指定为password  name也必须指定，才能传到服务器-->
+       密码框 <input type="password" name="password">
+        <br><br>
+<!--        单选按钮   这种选择框必须指定一个value值  vvalue值会作为用户选择的依据，传给服务器  checked属性表示  默认选择
+                        type值指定为radio    name 会作为单选的依据-->
+        单选按钮<input type="radio" name="h" value="1">
+        <input type="radio" name="h" value="2">
+        <input type="radio" name="h" value="3">
+        <input type="radio" name="h" value="4" checked>
+        <br><br>
+<!--        多选按钮  type指定为checkbox  name为text  value作为传给服务器的值  checked 默认选择-->
+        多选按钮<input type="checkbox" value="1" name="text" >
+        <input type="checkbox" value="2" name="text" >
+        <input type="checkbox" value="3" name="text" >
+        <input type="checkbox" value="4" name="text"  checked>
+        <br><br>
+<!--        下拉框   select  标签   必须和option子标签一起使用  value值作为传给服务器选择依据 -->
+        <select>
+            <option value="i">选项一</option>
+            <option value="ii">选项二</option>
+            <option value="iii">选项三</option>
+        </select>
+        <br><br>
+        <!--        提交按钮  type指定为submit  value指定为显示名称-->
+        <input type="submit" value="走一个">
+
+    </form>
+</body>
+</html>

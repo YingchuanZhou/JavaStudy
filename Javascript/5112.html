@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>toString</title>
+    <script>
+        function Person(name,age) {
+            this.name=name,
+            this.age=age
+        }
+        var per = new Person("周",21);
+        var per2 = new Person("王",20);
+        console.log(per);
+        //直接打印一个对象的时候，实际上是打印的对象的toString（）方法返回值
+        //如果不希望输出[Object Object]  只需要在对象中添加一个toString（）方法
+        //想要给类的全部对象都添加toString（）方法
+        /*
+        per.__proto__.toString = function () {
+           // return "我是一个努力的boy";
+            return "name="+this.name+"age"+this.age;
+        };
+         */
+        per.toString = function () {
+           // return "我是一个努力的boy";
+            return "name="+this.name+"age"+this.age;
+        };
+        console.log(per.toString());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

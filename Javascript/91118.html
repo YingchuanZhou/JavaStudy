@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电子邮件正则表达式</title>
+    <script>
+        /*
+            任意字母数字下划线开头 766623393@qq.com
+            任意数字和字母   @  qq  .com
+         */
+        var emailreg=/^[0-9]{5,10}@q{2}\.[a-z]{2,5}$/;//开头的^末尾的$不难少，少了代表含有这些，不代表一直待最后
+        var email = "766623393@qq.comyyyyyy";
+        document.write(emailreg.test(email));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

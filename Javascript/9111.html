@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+    <script>
+        /*
+        Date创建一个对象，表示创建的时间对象，
+            1.如果直接调用Date中的无参构造函数，默认显示当前时间
+            2.如果要指定一个时间的对象，则现需要传递一个表示时间的字符串作为参数
+                格式为：日/月/年 时：分：秒
+            Date中封装的方法：
+                getDate（）返回值是对象是第几天
+                getDay（）返回值是星期几0-6表示星期天-星期六
+                getMonth()返回当前时间对象的月份0-11 表示1-12月
+                getFullYear（）返回当前对象的年份
+                getTime（）获取当前时间戳
+                    表示当前时间与1970年1月1日0时0分0秒的时间差，单位为毫秒
+                可以用Date.now()获取当前的时间戳
+         */
+        var d = new Date();
+        var d2 = new Date("15/11/2020 21:22:50");
+        document.write(d.getDay());
+    </script>
+</head>
+<body>
+
+</body>
+</html>

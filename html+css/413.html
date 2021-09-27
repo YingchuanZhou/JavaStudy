@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行元素</title>
+    <style>
+        .ss{
+            /*
+              行元素不支持设置宽度和高度
+              行元素可以设置padding ，但是垂直方向的padding不影响页面的布局
+              行元素可以设置border，但是锤垂直方向的border不影响页面布局
+              行元素也可以设置margin 不影响垂直方向的页面布局
+              注意：  外边框不会重叠   外边距直接是两者之和
+             */
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 100px;
+        }
+        .dd{
+            width: 200px;
+            height: 200px;
+            background-color: chartreuse;
+        }
+        a{
+            /*
+              display 设置元素的显示类型
+                   inline  将元素设置为行内元素
+                   block   将元素设置为块元素】
+                   inline-block  将元素设置为行内块元素
+                         行内块元素 可以设置宽度和高度又不会独占一行
+                   table 将元素设置为表格
+                   none  元素不在页面中显示
+             visibility  设置元素的显示状态
+                   visible 默认值  元素正常显示
+                   hidden   隐藏元素  依然占据元素位置
+             */
+            display: inline-block;
+            visibility: hidden;
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:;">超链接</a>
+    <span class="ss">ssssspan</span>
+    <span class="ss">ssssspan</span>
+    <div class="dd">dddddddiv</div>
+</body>
+</html>

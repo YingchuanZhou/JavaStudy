@@ -1,0 +1,53 @@
+.box1{
+    .box2{
+        color: red;
+    }
+    >.box3{
+        color:red;
+
+        &:hover{
+            color:blue;
+        }
+    }
+    //为box1设置一个hover
+    //&表示外层父元素
+    &:hover{
+        color:orange;
+    }
+    div &{
+        width: 100px;
+    }
+}
+.p1{
+    width:200px;
+    height: 200px;
+}
+//:extend()对当前元素扩展指定选择器样式（选择器分组）
+.p2:extend(.p1)
+{
+    color:red;
+}
+.p3{
+    //直接指定样式进行引用，相当于对原样式的复制
+    .p1();
+}
+//使用类选择器可以再选择器后面加一个括号，创建一个mixin相当于函数
+.p4(){
+    width:100px;
+    height: 100px;
+    background-color: #bfa;
+}
+.p5{
+    .p4();
+}
+//混合函数，如果参数有默认值，则调用函数时可以不设置参数值
+//还有一些已经写好的函数，区zeal里面查
+.text(@w,@h,@col){
+    width:@w;
+    height: @h;
+    color: @col;
+}
+div{
+    .text(100px, 200px, red);
+    // .text(@w：100px, @h:200px, @col:red);
+}

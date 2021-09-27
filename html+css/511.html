@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子的尺寸</title>
+    <style>
+        /*
+           默认情况下 盒子大小由内容区，内边距，外边距，边框决定
+             box-sizing   设置盒子尺寸的计算方式
+               content-box  默认值，宽度和高度用来指定内容区
+               border-box  宽度和高度指定可见框的大小
+
+         */
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            padding: 10px;
+            border: red 10px solid;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他样式操作的属性</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            padding: 20px;
+            border: solid 10px yellow;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var box1=document.getElementById("box1");
+            var btn01 =document.getElementById("btn01");
+            btn01.onclick=function () {
+                /*
+                以下属性只能读，不能改，都不带单位
+                clientWidth
+                clientHeight
+                   这两个属性口语获取元素的可见高度和宽度
+                   只包括内容去和内边距，不包括外边框，
+                offsetHeight
+                offsetHeight
+                    获取元素的可见宽度和高度，包括内边距，内容区，外边框
+                offsetParent
+                    获取当前元素的定位父元素，会获取最近开启了定位的祖先元素，如果所有祖先元素都没有开启，返回body
+                offsetLeft
+                    当前元素相对于其定位父元素的水平偏移量
+                offsetTop
+                    当前元素相对于其定位父元素的垂直偏移量
+                scrollWidth     可以滚动的宽度
+                scrollHeight    可以滚动的高度
+                scrollLeft  水平滚动的距离
+                scrollTop    垂直滚动的距离
+                 */
+                alert(box1.offsetHeight);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="btn01">点击</button>
+    <br><br>
+    <div id="box1"></div>
+</body>
+</html>

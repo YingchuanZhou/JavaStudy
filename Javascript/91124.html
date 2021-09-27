@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM其他查询</title>
+    <script>
+        window.onload=function () {
+        /*
+            在document里面有一个body属性值，可以直接获取body标签，他是body的引用
+            还要一个documentElement属性值是html标签的属性值
+            all 属性代表所有标签元素
+         */
+            var body = document.body;
+            var html = document.documentElement;
+            console.log(body);
+            document.write(html);
+            var all = document.all;
+            // all = document.getElementsByTagName("*");//这个也可以获取全部的标签
+            /*
+            根据元素的class属性查询元素,IE9才支持
+             */
+            var box=document.getElementsByClassName("box");
+            console.log(box.length);
+            ////document.querySelector(); 参数是一个CSS选择器,IE8也支持，缺点只会返回一个元素对象，有多个只返回第一个
+            var div = document.querySelector(".box div")
+            console.log(div.innerHTML);
+            //document.querySelectorAll(),可以返回多个满足条件的元素，以数组形式返回
+            //即使只有一个，也是返回数组
+        };
+    </script>
+</head>
+<body>
+    <div class="box">
+        <div>box中的div</div>
+    </div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

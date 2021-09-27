@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数的方法</title>
+    <script>
+        /*
+            call()和apply()
+            两个方法都需要通过函数对象调用
+            call和apply都可以将对象指定为第一个参数，此时这个对象将会成为执行时的this
+            call方法可以将实参在对象之后一次传递
+            apply方法需要将实参封装在数组中
+            this的情况：
+                以函数形式，this是window
+                以方法的形式，this是对用方法的对象
+                以构造的形式，this是创建的对象
+                使用call和apply调用时，this是指定的对象
+         */
+        function fun(a,b) {
+            alert("我是fun函数");
+            console.log("a="+a);
+            console.log("b="+b);
+        }
+        var obj={};
+        fun.call(obj,2,3);
+        fun.apply(obj,[2,3]);
+        //fun.call();
+        /*
+            在调用函数时，浏览器每次都会传递两个隐含的参数
+                1.函数会传递一个this参数，代表调用的对象
+                2.还会传递一个arguments参数
+                arguments 调用函数时保存实参，arguments.length()可以用来获取实参的长度
+         */
+        function func() {
+            alert(arguments.length);
+            console.log(arguments.callee);
+        }
+        func("hello",true);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

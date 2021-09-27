@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>变形平移</title>
+    <style>
+        body{
+            background-color: silver;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bbffaa;
+            margin: 0 auto;
+            margin-top: 200px;
+        /*
+          变形
+             通过css来改变元素的形状和位移
+             变形不会影响页面的布局
+             transform  用来设置元素变形效果
+             平移
+               translateX（）  x轴平移
+               translateY（）  y轴平移
+               translateZ（）  z轴平移
+                 值可以是多少px   也可以是%
+        */
+            transform: translateX(100px);
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            margin: 0 auto;
+        }
+        .box3{
+            background-color: yellow;
+            position: absolute;
+        /*  要使box3居中，我们可以通过平移来完成
+        不确定的一个用平移来完成
+
+        这种方式适用于盒子大小确定的
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          margin:auto;
+        */
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .box4,.box5{
+            width: 220px;
+            height: 300px;
+            background-color: #ffffff;
+            float: left;
+            margin:  0 10px;
+            transition: all .3s;
+        }
+        .box4:hover,.box5:hover{
+            transform: translateY(-4px);
+            box-shadow: 0 0 10px rgba(0,0,0,.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+<!--    <div class="box2"></div>-->
+    <div class="box3">hello</div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</body>
+</html>

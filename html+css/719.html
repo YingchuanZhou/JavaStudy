@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图标字体其他用法</title>
+    <link rel="stylesheet" href="../fa/css/all.css">
+    <style>
+        li{
+            list-style: none;
+        }
+        li::before{
+            /*
+              通过伪元素来设置图标字体
+                 找到妖色孩子得图标，通过before和after选中
+                 在content中设置字体编码
+                 设置字体样式
+                    fab
+                    font-family: "Font Awesome 5 Brands";
+                    fas
+                    font-family: "Font Awesome 5 Free";
+                    font-weight: 900;
+            */
+            content: '\f1b0';
+            /*font-family: "Font Awesome 5 Brands";*/
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: blue;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>锄禾日当午</li>
+    <li>汗滴禾下土</li>
+    <li>谁知盘中餐</li>
+    <li>粒粒皆辛苦</li>
+</ul>
+<span class="fas">&#xf0f3;</span>
+</body>
+</html>

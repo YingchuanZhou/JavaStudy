@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+    <button id="btn" onmousemove="alert('傻逼');" >打开</button>
+    <script>
+        /*
+            事件是用户和浏览器之间的交互
+                比如说点击按钮和鼠标移动，关闭窗口
+                通过给对象绑定事件完成响应，可以在标签中完成，也可以通过设置对象的属性，绑定事件
+         */
+        var botton = document.getElementById("btn");
+        botton.onclick = function () {
+            alert("憨批");
+        }
+    </script>
+</body>
+</html>

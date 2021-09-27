@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Div跟随鼠标移动</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            /*不开启定位也不行，必须开启定位*/
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //div跟随鼠标移动
+            var box1=document.getElementById("box1");
+            document.onmousemove = function (event) {
+                //解决兼容问题
+                event=event || window.event;
+                //获取可见窗口坐标
+                var left = event.clientX;
+                var top = event.clientY;
+                /*
+                pageX属性是相对于整个页面的位置
+                pageY
+                有滚动条的时候，只是可见窗口就不行
+                IE8不兼容
+                解决不兼容问题
+                var st = document.body.scrollTop || document.documentElement.scrollTop;
+                var sl= document.body.scrollLeft || document.documentElement.scrollLeft;
+                box1.style.left=left+sl+"px";
+                box1.style.top = top+st+"px";//注意一定要加上“px"右边只能是字符串
+                 */
+                //设置偏移量
+                box1.style.left=left+"px";
+                box1.style.top = top+"px";//注意一定要加上“px"右边只能是字符串
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box1"></div>
+</body>
+</html>

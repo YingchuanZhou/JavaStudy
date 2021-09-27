@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他文本样式</title>
+    <style>
+        .box1{
+        /*
+         text-decoration  文本修饰
+              text-decoration: 形式 颜色 样式;
+           可选值：
+             none 默认  没有
+             underline  下划线
+             overline  上划线
+             line-though  删除线
+        */
+            font-size: 50px;
+            text-decoration: underline red dotted;
+        }
+        .box2{
+        /*
+          white-space 设置网页如何处理空白
+            可选值：
+              normal  正常
+              nowrap  不换行
+              pre  保留空白
+        */
+            width: 300px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        /*    设置浏览器显示300px长度的文本 多余的内容隐藏，并且不换行，在末尾显示...*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">今天天气真不错</div>
+    <div class="box2">本监测系统的应变监测共10个监测点，每个监测点安装有1个监测传感器，监测数据存放在“应变监测数据.txt”文件中，该文件数据除第一列之外（监测时间），其它每列对应一个传感器的监测数据（波长），假设这10个传感器一次对应10个监测点。数据文件的数据含义如下表：</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+    <script>
+        /*
+            正则表达式可以定义一些字符串规则
+                通过正则表达式来检查一共字符串是否符合规则
+                或则将字符串复合规则的内容提取出来
+
+                创建一个正则表达式的对象
+                var reg=new RegExp("正则表达式","匹配模式")
+                正则表达式的方法：
+                    test（）
+                        使用这个方法可以用来检查一共字符串是否符合正则表达式的规则
+                        符合返回true，不符合返回false
+                        第二个参数可以忽略：
+                            i  忽略大小写
+                            g  全局匹配模式
+                第二种创建方法：
+                var reg=/a/i;这种方式根简单，不如构造函数灵活
+                创建一个正则表达式，判断是否含有a或者b
+                var reg=/a|b/i
+                创建一共正则表达式，检查是都含有字母
+                var reg=/[a-z]/;0-9，，这个范围是unicode编码A-z表示字母中括号里面表示或则关系
+                创建一个判断是否含哟abc或者aec或者adc的正则表达式
+                reg= /a[ebd]c/;
+                reg=/[^ab]/;表示除了ab的正则表达式
+
+         */
+        var reg= new RegExp("a","i");//表示找到字符串中是否含有a
+        var str="a";
+        document.write(reg.test("abc"));
+        var reg2=/a|b/i;
+        document.write(reg2.test("aBcd"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

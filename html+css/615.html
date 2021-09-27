@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>after伪元素防止高度塌陷</title>
+    <style>
+        .box1{
+            border: red 10px solid;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            float: left;
+        }
+        /*.box3{*/
+        /*    clear: both;*/
+        /*}*/
+        .box1::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+        <div class="box1">
+            <div class="box2"></div>
+<!--            <div class="box3"></div>-->
+        </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+    <style>
+        #eareDiv{
+            height: 100px;
+            width: 200px;
+            background-color: red;
+        }
+        #showMsg{
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+    <script>
+    window.onload = function () {
+        var eareDiv=document.getElementById("eareDiv");
+        var showMsg = document.getElementById("showMsg");
+        //当事件被触发时，浏览器会自动将时间对象作为形参传递给响应函数
+        //在事件中封装了该事件的一切信息，比如说：鼠标i的坐标，键盘那个按键被按下，鼠标滚动方向
+        eareDiv.onmousemove = function (event) {
+            //解决兼容性问题
+            //在IE8中，响应函数触发时不会传递事件对象，在IE8中事件是作为window属性值存储的
+            //所以要判断是否又event对象，如果没有，则是window.event
+            if(!event)
+                event=window.event;
+            //event = event || window.event     这样也可以
+            //获取x，y坐标
+            var x= event.clientX;
+            var y=event.clientY;
+            showMsg.innerHTML="x="+x+",y="+y;
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="eareDiv"></div>
+    <div id="showMsg"></div>
+</body>
+</html>

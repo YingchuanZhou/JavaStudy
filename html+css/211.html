@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类</title>
+    <style>
+        /*:link 给为访问过(正常）的连接设置颜色
+        通过:visited 给访问过的连接设置颜色   前两个只能用于超链接
+           :hover  鼠标移入状态
+           :active  鼠标点击状态  所有都可以
+         */
+        a:link{
+            color: red;
+        }
+        a:visited{
+            color: green;
+        }
+        a:hover{
+           color: gold;
+            font-size: 30px;
+        }
+        a:active{
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+<!--区分连接有没有被访问过-->
+    <a href="https://www.baidu.com">baidu</a>
+    <br><br>
+    <a href="https://www.baidu111.com">baidu1</a>
+</body>
+</html>

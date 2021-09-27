@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM查询</title>
+    <script>
+        //首先设置最后执行
+        window.onload = function () {
+            var cbj = document.getElementById("cbj");//获取id为cbj对象
+            cbj.onclick = function () {//为cbj按钮绑定事件
+
+                var bj = document.getElementById("bj");
+                alert(bj.innerHTML);//访问对象的文本
+            };
+            var cli = document.getElementById("cli");
+            cli.onclick = function () {
+                //查询所有的li结点
+                //通过getElementsTagName()返回所有的li元素结点对象
+                //返回值为一组对象，即使是一个对象
+                var btn = document.getElementsByTagName("li");
+                alert(btn.length);
+                for(var i=0;i<btn.length;i++)
+                {
+                    alert(btn[i].innerHTML);
+                }
+            };
+            var gen= document.getElementById("cin");//查找cin按钮
+            gen.onclick = function () {
+                //查找gender结点
+                //输出长度
+                var btn = document.getElementsByName("gender")
+                alert(btn.length);
+                //innerHTML用于获取元素内部的HTML代码
+                //对于自结束标签没有意义
+                alert(btn[0].innerHTML);
+                //可以读取元素的属性值
+                //直接通过元素.属性名，但是不能用访问class属性，要用className访问
+                alert(btn[0].name);
+                alert(btn[0].className);
+            };
+            //获取文件里面的bcity按钮
+            var btn2 = document.getElementById("ccity");
+            btn2 .onclick = function () {
+                //获取city下面的的所有li结点
+                var city=document.getElementById("city");
+                //获取city的元素
+                var list =city.getElementsByTagName("li");
+                for(var i=0;i<list.length;i++)
+                {
+                    alert(list[i].innerHTML);
+                }
+            };
+            var btn3 = document.getElementById("bcity");
+            btn3.onclick = function () {
+                //获取id为city的节点
+                var city = document.getElementById("city");
+                //会获取所有的元素包括文本节点
+                var res = city.childNodes;
+                //返回所有元素的子元素不包括文本节点
+                var res2 = city.children;
+
+                alert(res.length);
+                alert(res2.length);
+            };
+        };
+    </script>
+</head>
+<body>
+    <div id="total">
+        <div class="inner">
+            你喜欢哪个城市？
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li >上海</li>
+            </ul>
+        </div>
+    </div>
+    <div class="inner">
+        <input name="gender" class="111">
+    </div>
+    <button id="cbj">查询北京</button>
+    <button id="cli">查询LI</button>
+    <button id="cin">查询input</button>
+    <button id="ccity">获取city里面的元素</button>
+    <button id="bcity">查询city下面的全部字节点</button>
+</body>
+</html>

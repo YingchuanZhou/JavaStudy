@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数原型/原型对象</title>
+    <script>
+        /*
+         原型函数
+            我们所创建的每一个函数都会在其中添加一个prototype属性
+                这个属性对应一个对象，这个对象就是原型对象
+                    该属性是隐含的，是所有对象公共的，所有对象都可以访问
+                    所以通常将公共的部分放在原型里面，节省空间而且方便
+             如果函数作为普通函数调用prototype没有任何作用
+              如果作为构造函数调用，每个创建的对象中都会有一个隐含的属性
+                   指向该构造函数的原型对象，我们可以通过  __proto__   来访问属性
+
+                   以后创建构造函数时可以将公共的属性放在原型中，
+
+                   原型对象也是对象，所以也有原型，当我们使用对象方法的时候，如果对象里面没有，则自动去原型对象里面找
+                   如果原型对象里面也没有，则取原型的原型对象里面找，直到找到Object原型，如果没有找到则返回undefined
+                   最多3个原型
+
+         */
+        function Myclass()
+        {
+
+        };
+        Myclass.prototype.say = function () {
+            alert(this.name);
+        }
+        //给原型中创建一个原型属性
+        Myclass.prototype.name = "原型中的名字";
+        var mc = new Myclass();
+        console.log(mc.__proto__===Myclass.prototype);
+        document.write(mc.name);
+        //使用in检查对象中是否含有属性值,如果说对象里面没有，原型里面有也会返回true
+        document.write("name" in mc);
+        //hasOwnPrototype() 检查对象自身是否含有某个属性值，如果对象里面有，返回true
+        document.write(mc.hasOwnProperty("name"));
+        document.write(mc.__proto__.__proto__.__proto__);//极限只有3个原型
+    </script>
+</head>
+<body>
+
+</body>
+</html>

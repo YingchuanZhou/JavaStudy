@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动的特点</title>
+    <style>
+        .box1{
+            /*
+              元素设置浮动之后不会盖住文字，文字会自动环绕在浮动元素周围
+                所以可以用浮动来设置元素环绕效果
+             */
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            float: left;
+        }
+        .box2{
+            /*
+              元素设置浮动之后，会脱离文档流，一些特点也会发生改变
+                脱离文档流的特点：
+                  块元素不会独占一行
+                  块元素默认高度和宽度会被内容撑开
+                  行元素的特点和块元素一样，可以设置宽度和高度
+             */
+            background-color: blue;
+            float: left;
+        }
+        .box3{
+            background-color: red;
+        }
+        span{
+            float: left;
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box1"></div>
+    <p>《关于举办重庆交通大学第六届学生“法治文化节”的通知》以及全国青少年普法网各班级同学账号密码已上传。
+        要求全体学生参与“宪法小卫士”网上法治知识学习和测评，全覆盖全参与，请同学们按照下发的账号进行登录完成、作为学院参与的统计数据，请同学们利用7-8月暑假期间完成，学校将适时把各学院完成情况进行通报。@全体成员
+    </p>
+    <div class="box2">div2</div>
+    <div class="box3">div3</div>
+    <span>  </span>
+</body>
+</html>

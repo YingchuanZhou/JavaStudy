@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浏览器默认样式</title>
+    <style>
+        /*
+           浏览器有默认眼样式 浏览器里面去检查代码
+         */
+        .box{
+            border: 1px black solid;
+            width: 200px;
+            height: 200px;
+        }
+       /* body{
+            margin: 0;
+        }
+        p{
+            margin: 0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;/*去掉list前面的黑点*/
+        }*/
+        /*因为都是去掉margin和padding，所有用通配选择器*/
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+    <p>我是一个段落</p>
+    <P>我是一个段落</P>
+    <ul>
+        <li>列表1</li>
+        <li>列表2</li>
+        <li>列表3</li>
+    </ul>
+</body>
+</html>

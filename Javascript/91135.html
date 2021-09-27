@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标滚动事件</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+    </style>
+    <script>
+        window.onload = function () {
+        var box1 = document.getElementById("box1");
+        /*
+        为box1绑定鼠标滚动事件
+        onmousewheel鼠标滚动事件，会在鼠标滚动时触发
+        火狐中要用;
+        DOMMouseScroll 来绑定滚动事件，要通过addEventListener（）来添加绑定函数
+         */
+            box1.onmousewheel = function(event){
+                //alert("滚了");
+                //event.wheelDelta 可以获取鼠标滚动的方向
+                //火狐中不支持，要用event.detail来获取，向上为证，向下为－
+                //向上为120，向下为-120
+                if(event.wheelDelta>0)
+                    //alert("向上");
+                    box1.style.height = box1.clientHeight -10 +"px";
+                else
+                    //alert("向下");
+                    box1.style.height = box1.clientHeight +10 +"px";
+            }
+            /*
+            当浏览器中滚轮滚动时，如果有滚动条，滚动条会随之滚动
+            这是浏览器的默认行为，需要取消这个默认行为，直接return false
+            使用addEventListener 绑定事件需要用event来取消，preventDefault（）
+             */
+        bind(box1,"DOMMouseScroll",function () {
+                alert("滚了");
+        });
+        event.preventDefault();
+            return false;
+        }
+        function bind(obj, eventStr,callback) {
+            if(obj.addEventListener) {
+                obj.add(eventStr, callback, false);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div id="box1" ></div>
+</body>
+</html>

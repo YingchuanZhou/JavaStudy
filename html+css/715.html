@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位元素位置</title>
+    <style>
+        /*
+           水平布局
+            left+margin+padding+border+right=包含快的width
+            开启绝对定位后，水平布局添加了left和right两个值
+             当发生过度约束时，9个值没有auto时，自动调整right的值
+             如果又auto则调整auto
+             可设置auto
+                margin width left  right
+                  left和right默认值为auto所有不知道值的时候，不满足等式时，会自动调整这两个值
+              垂直布局
+               top+margin+padding+border+bottom=包含快的height
+
+         */
+        .box1{
+            height: 500px;
+            width: 500px;
+            background-color: chartreuse;
+            position: absolute;
+        }
+        .box2{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

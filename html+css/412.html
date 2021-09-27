@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>外边距的折叠</title>
+    <style>
+        /*
+          兄弟元素
+            垂直方向的外边距同号 如果相邻，则会重叠  则取决于两者间距绝对值最大的  特殊情况 一正一负  则会取和
+          父子元素
+            父子元素的外边距 子元素会传递给父元素
+            1、可以用padding来让子元素移动
+            2、也可以用边框来时子元素和父元素外边界分开 通过计算来让子元素移动到想要的位置
+         */
+        .box1,.box2{
+            width: 200px;
+            height: 200px;
+            font-size: 100px;
+        }
+        .box1{
+            background-color: chartreuse;
+            margin-bottom: 100px;
+        }
+        .box2{
+            background-color: gold;
+            margin-top: 100px;
+        }
+        .box3{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box3"></div>
+    </div>
+    <div class="box2"></div>
+</body>
+</html>

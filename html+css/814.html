@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本的水平和垂直对齐</title>
+    <style>
+        div{
+            width: 800px;
+            border: red 1px solid;
+        /*
+           text-align 水平对齐
+              可选值：
+                 left  左对齐
+                 right  右对齐
+                 top   上对齐
+                 bottom   下对齐
+        */
+            font-size: 50px;
+        }
+        span{
+            font-size: 20px;
+            border: blue 1px solid;
+        /*
+          vertical-align  垂直对齐
+            可选值：
+               baseline  默认值，  基线对齐
+               top 顶部对齐
+               bottom  底部对齐
+               middle  居中对齐
+               _____px   与基线偏移多少像素
+        */
+            vertical-align: baseline;
+        }
+        p{
+            border: red 1px solid;
+            vertical-align: top;
+        /*    使用垂直对齐是图片和边框对齐，减少对布局的影响=*/
+        }
+    </style>
+</head>
+<body>
+    <div>Hello,hello,今天天气<span>真不错</span></div>
+    <p>
+        <img src="../images/gameover.png">
+    </p>
+
+</body>
+</html>

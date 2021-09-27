@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮廓和圆角</title>
+    <style>
+        /*
+           outline 设置元素的轮廓线
+             outline与border区别：border会影响布局 outline 不会影响布局
+         */
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            /*border: red 10px solid;*/
+            /*
+              box-shadow  用来设置元素的阴影效果，不会影响布局
+                 第一个值  水平偏移位置
+                 第二个值  竖直偏移位置
+                 第三个值  阴影的模糊半径
+                 第四个值  阴影的颜色
+             */
+            box-shadow: 30px 30px 20px rgba(0,0,0,3);
+        }
+        .box1:hover{
+            outline: red 10px solid;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            /*
+               border-radius 设置圆角 后面设置半径
+                border-top-left-radius 左上角半径
+                 border-top-right-radius  右上角半径
+                border-bottom-left-radius 左下角半径
+                border-bottom-right-radius 右下角半径
+                   设置两个值且不相等，就是椭圆
+               border-radius
+               一个值 全部都是一个半径   x/y 表示椭圆
+               两个值 左上/右下 右上/左下
+               三个值 左上 右上/左下 右下
+               四个值 左上 右上 右下 左下
+               50% 圆形
+
+             */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+     <div class="box1"></div>
+    <span>Hello</span>
+    <div class="box2"></div>
+</body>
+</html>

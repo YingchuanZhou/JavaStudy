@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过渡</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: silver;
+            overflow: hidden;
+        }
+        .box1 div{
+            width: 100px;
+            height: 100px;
+            margin-bottom: 100px;
+        }
+        .box2 {
+            background-color: aqua;
+            margin-left: 0;
+            /*
+            过渡 （transition）
+              通过过渡可以指定一个属性变化的切换方式
+        */
+            /*
+            transition-property   指定执行过渡的属性
+            多个属性之间用，隔开 如果所有或者很多属性都需要过渡，用关键字all
+            大部分属性都支持过渡，注意：过渡时必须从一个具体值到另外一个具体值
+        */
+            transition-property: all;
+            /*
+           transition-duration 指定过渡的时间
+           单位s  ms
+        */
+            transition-duration: 2s;
+            /*
+            transition-timing-function  指定过渡的时间函数
+               ease  默认值，慢速快速慢速
+               linear   匀速
+               ease-in   加速
+               ease-out   减速
+               ease-in-out   加速，减速
+               cubic-bezier（）  指定时间函数
+                  https://cubic-bezier.com
+               steps()分布执行
+               第一个值时步数，第二个值  start表示时间开始时执行  end表示时间结束时开始执行
+
+         */
+            /*transition-timing-function: cubic-bezier(.25,.1,.25,1);*/
+            transition-timing-function: steps(2,start);
+        }
+            .box3{
+
+                background-color: orange;
+                transition-property: all;
+                transition-duration: 2s;
+            }
+            .box1:hover div{
+                width: 200px;
+                height: 200px;
+            }
+    /*
+    transition-delay   执行时间延迟
+    */
+        .box2{
+            transition-delay: 3s;
+        }
+    /*
+      transition  简写属性
+         没有先后，如果延迟和持续时间同时写，持续时间在前，延迟时间在后
+    */
+        .box2{
+            transition: 2s margin-left 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>

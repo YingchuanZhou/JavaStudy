@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数</title>
+    <script>
+        /*
+         创建一个构造函数，专门用来创建对象的函数
+         构造函数的创建方式与普通方式一样
+         首字母通常大写
+         构造函数的调用与普通函数不一样，需要用new关键字
+               构造函数：
+                 创建对象的，返回值就是对象
+         */
+        function fun() {
+            alert(this.name);
+        }
+        function Person(name,age) {
+            this.name=name,
+            this.age=age,
+            this.say=fun
+        }
+        var per=new Person("sss",18);
+        var per2=new Person("aaa",18);
+        var per3=new Person("saa",18);
+        var per4=new Person("sees",18);
+        per.say();
+        per2.say();
+        per3.say();
+        console.log(per.name);
+        console.log(per2.name);
+        console.log(per3.name);
+        console.log(per4.name);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

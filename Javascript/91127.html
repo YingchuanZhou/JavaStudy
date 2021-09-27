@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM获取元素样式</title>
+    <style>
+        #box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var box1=document.getElementById("box1");
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function () {
+                // alert(box1.style.width);
+                /*
+                获取元素当前元素显示的样式，
+                语法：元素.currentStyle.样式名
+                只能IE支持
+                 */
+                alert(box1.currentStyle.width);
+
+            };
+            var btn02=document.getElementById("btn02");
+            btn02.onclick=function () {
+                /*
+                在其他浏览器中，
+                可以用getComputedStyle（）方法，该方法是window的方法，可以直接使用
+                需要两个参数，
+                    第一个：要获取元素
+                    第二个：传递一个伪元素，一般都传递null
+                 该方法会返回一个对象，将所有的样式封装在一个对象中
+                 可以通过对象名.样式名获取对象样式的值
+                 但是IE8及以下的浏览器不支持
+                 */
+                alert(getComputedStyle(box1,null).width);
+            };
+            //定义一个获取元素样式的函数，让所有浏览器都支持
+            function getStyle(obj,name,) {//boj:获取元素，name：获取样式名
+                //需要判断浏览器版本
+                //除IE以外
+                //return getComputedStyle(obj,null).[name];
+                //IE支持
+                // return obj.currentStyle.[name];
+                //判断方法是否存在
+                if(window.getComputedStyle)//判断window是否有该属性
+                    return getComputedStyle(obj,null)[name];
+                else
+                    return obj.currentStyle[name];
+                //可以替换成3目运算符
+            }
+        }
+    </script>
+</head>
+<body>
+<button id="btn01">点击1</button>
+<button id="btn02">点击2</button>
+<br><br>
+<div id="box1"></div>
+</body>
+</html>
