@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  zhouapp:
+    build: .
+    image: zhouapp
+    depends_on:
+      - redis
+    ports:
+      - "8080:8080"
+  redis:
+    image: "redis:alpine"
+
+#  mysql:
+#    ...
